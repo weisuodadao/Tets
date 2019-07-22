@@ -1,4 +1,4 @@
-package Linked;
+package src.Linked;
 
 /**
  * Created by luoxianzhuo on 2019/3/18 21:16

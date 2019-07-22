@@ -1,4 +1,4 @@
-package BFS;
+package src.BFS;
 
 import javafx.util.Pair;
 

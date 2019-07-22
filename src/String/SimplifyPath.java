@@ -1,4 +1,4 @@
-package String;
+package src.String;
 
 import java.util.Arrays;
 import java.util.Deque;

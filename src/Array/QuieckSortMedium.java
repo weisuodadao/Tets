@@ -1,4 +1,4 @@
-package Array;
+package src.Array;
 
 /**
  * Created by luoxianzhuo on 2019/3/24 16:54

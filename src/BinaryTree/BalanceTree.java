@@ -1,4 +1,4 @@
-package BinaryTree;
+package src.BinaryTree;
 
 /**
  * Created by luoxianzhuo on 2019/3/28 17:34

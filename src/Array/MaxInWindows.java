@@ -1,9 +1,8 @@
-package Array;
+package src.Array;
 
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Deque;
-import java.util.PriorityQueue;
 
 /**
  * Created by luoxianzhuo on 2019/3/28 17:35
