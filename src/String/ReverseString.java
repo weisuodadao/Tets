@@ -6,7 +6,7 @@ package src.String;
  * @author luoxianzhuo
  * @copyright Copyright 2014-2017 JD.COM All Right Reserved
  */
-public class ReverseString {
+public class  ReverseString {
 
     public String reverseWords(String s) {
         if (s == null) return null;
@@ -49,7 +49,6 @@ public class ReverseString {
     // trim leading, trailing and multiple spaces
     private String cleanSpaces(char[] a, int n) {
         int i = 0, j = 0;
-
         while (j < n) {
             while (j < n && a[j] == ' ') j++;             // skip spaces
             while (j < n && a[j] != ' ') a[i++] = a[j++]; // keep non spaces

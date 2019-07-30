@@ -5,6 +5,7 @@ package src.String;
  *
  * @author luoxianzhuo
  * @copyright Copyright 2014-2017 JD.COM All Right Reserved
+ * 最长回文无重复子串
  */
 public class LongestPalindrome {
 

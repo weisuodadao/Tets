@@ -12,7 +12,7 @@ public class HeapSort {
      * 最大堆实现堆排序
      */
     private static void heapSort(int[] arr) {
-        int len = arr.length-1;
+        int len = arr.length - 1;
         for (int i = len / 2; i >= 0; i--) { //最大堆构造
             heapAdjust(arr, i, len);
         }
@@ -39,8 +39,6 @@ public class HeapSort {
     }
 
 
-
-
     public static void swap(int[] arr, int i, int len) {
         int temp = arr[i];
         arr[i] = arr[len];
@@ -48,10 +46,10 @@ public class HeapSort {
     }
 
     public static void main(String[] args) {
-        int[] arr={1,32,5,43};
+        int[] arr = {1, 32, 5, 43};
         heapSort(arr);
-        for (Integer a:arr){
-            System.out.print(a+" ");
+        for (Integer a : arr) {
+            System.out.print(a + " ");
         }
     }
 }
