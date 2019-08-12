@@ -12,7 +12,7 @@ public class QuickSort {
         if (low < high) {
             pivotLoc = partitionLoc(arr, low, high);
             quickSort(arr, low, pivotLoc - 1);
-            quickSort(arr, low, high);
+            quickSort(arr, pivotLoc + 1, high);
         }
 
     }

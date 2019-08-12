@@ -6,7 +6,7 @@ package src.Array;
  * @author luoxianzhuo
  * @copyright Copyright 2014-2017 JD.COM All Right Reserved
  */
-public class ArrayQueue {
+public class  ArrayQueue {
 
     private int[] arrInt;// 内置数组
     private int front;// 头指针
