@@ -20,7 +20,7 @@ public class TreeDepth {
     public int findDeep2(TreeNode root) {
         if (root == null) return 0;
 
-        TreeNode current = null;
+        TreeNode current;
         LinkedList<TreeNode> queue = new LinkedList<TreeNode>();
         queue.offer(root);
         int cur, last;
