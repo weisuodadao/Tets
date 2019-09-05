@@ -5,6 +5,7 @@ package src.与;
  *
  * @author luoxianzhuo
  * @copyright Copyright 2014-2017 JD.COM All Right Reserved
+ * 一个数转成二进制后有多少个1
  */
 public class NumberOf1 {
 

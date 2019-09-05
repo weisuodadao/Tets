@@ -23,7 +23,7 @@ public class LRUCache {
         }
     }
 
-    HashMap<Integer, Node> map = null;
+    HashMap<Integer, Node> map;
     int cap;
     Node head = null;
     Node tail = null;

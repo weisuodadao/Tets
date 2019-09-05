@@ -21,7 +21,7 @@ public class TreeDepth {
         if (root == null) return 0;
 
         TreeNode current;
-        LinkedList<TreeNode> queue = new LinkedList<TreeNode>();
+        LinkedList<TreeNode> queue = new LinkedList<>();
         queue.offer(root);
         int cur, last;
         int level = 0;

@@ -5,6 +5,7 @@ package src.与;
  *
  * @author luoxianzhuo
  * @copyright Copyright 2014-2017 JD.COM All Right Reserved
+ * 数组中单独的数
  */
 public class SingleNumber {
 

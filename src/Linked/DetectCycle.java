@@ -23,10 +23,12 @@ public class DetectCycle {
         while (fast != null && fast.next != null) {
             fast = fast.next.next;
             slow = slow.next;
+            //这里即为环
             if (fast == slow) {
                 break;
             }
         }
+        //环入口
         while (head != null && slow != null) {
             if (head == slow) {
                 return slow;

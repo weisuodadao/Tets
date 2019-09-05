@@ -26,6 +26,12 @@ public class LongestPalindrome {
         return s.substring(start, end + 1);
     }
 
+    /**
+    * @author luoxianzhuo
+    * @date 2019/9/5 22:21
+    * @version V1.0.0 
+    * @description 字符串周围长度 
+    */
     private int expandAroundCenter(String s, int left, int right) {
         int L = left, R = right;
         while (L >= 0 && R < s.length() && s.charAt(L) == s.charAt(R)) {
@@ -35,7 +41,4 @@ public class LongestPalindrome {
         return R - L - 1;
     }
 
-    public static void main(String[] args) {
-        LongestPalindrome longestPalindrome=new LongestPalindrome();
-    }
 }

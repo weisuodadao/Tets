@@ -12,7 +12,7 @@ public class GetIntersectionNode {
      * @author luoxianzhuo
      * @date 2019/3/27 15:27
      * @version V1.0.0
-     * @description 相交链表
+     * @description 相交链表找相交节点
      */
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
         if (headA == null || headB == null) return null;
