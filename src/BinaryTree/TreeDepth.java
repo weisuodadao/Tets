@@ -1,6 +1,7 @@
 package src.BinaryTree;
 
 import java.util.LinkedList;
+import java.util.Queue;
 
 /**
  * Created by luoxianzhuo on 2019/3/28 17:33
@@ -21,7 +22,7 @@ public class TreeDepth {
         if (root == null) return 0;
 
         TreeNode current;
-        LinkedList<TreeNode> queue = new LinkedList<>();
+        Queue<TreeNode> queue = new LinkedList<>();
         queue.offer(root);
         int cur, last;
         int level = 0;
