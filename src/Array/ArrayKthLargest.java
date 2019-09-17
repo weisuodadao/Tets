@@ -1,5 +1,7 @@
 package src.Array;
 
+import java.util.Random;
+
 /**
  * Created by luoxianzhuo on 2019/3/27 17:05
  *
@@ -49,8 +51,57 @@ public class ArrayKthLargest {
     }
 
     public static void main(String[] args) {
-        int[] arr = {1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10, 11, 11, 12, 12, 11, 12, 7, 8};
-        ArrayKthLargest arrayKthLargest=new ArrayKthLargest();
-        System.out.println(arrayKthLargest.findKthLargest(arr,3));
+        int[] arr = { 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10, 11, 11, 12, 12, 11, 12, 7, 8};
+        ArrayKthLargest arrayKthLargest = new ArrayKthLargest();
+        System.out.println(arrayKthLargest.findKthLargestByQsort(arr, 3));
     }
+
+    /**
+     * @author luoxianzhuo
+     * @date 2019/9/16 22:02
+     * @version V1.0.0
+     * @description 快速排序解法
+     */
+    private static int partitionLoc(int[] arr, int low, int high) {
+        int pivotKey = arr[low];
+        while (low < high) {
+            while (low < high && arr[high] > pivotKey) {
+                high--;
+            }
+            arr[low] = arr[high];
+            while (low < high && arr[low] < pivotKey) {
+                low++;
+            }
+            arr[high] = arr[low];
+        }
+        arr[low] = pivotKey;
+        return low;
+    }
+
+
+    public int quickSelect(int[] nums, int left, int right, int k_smallest) {
+    /*
+    Returns the k-th smallest element of list within left..right.
+    */
+
+        if (left == right) // If the list contains only one element,
+            return nums[left];  // return that element
+
+        int pivot_index = partitionLoc(nums, left, right);
+
+        // the pivot is on (N - k)th smallest position
+        if (k_smallest == pivot_index)
+            return nums[k_smallest];
+            // go left side
+        else if (k_smallest < pivot_index)
+            return quickSelect(nums, left, pivot_index - 1, k_smallest);
+        // go right side
+        return quickSelect(nums, pivot_index + 1, right, k_smallest);
+    }
+
+    public int findKthLargestByQsort(int[] nums, int k) {
+        return quickSelect(nums, 0, nums.length - 1, nums.length - k);
+    }
+
+
 }

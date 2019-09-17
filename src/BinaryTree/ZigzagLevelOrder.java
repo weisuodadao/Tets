@@ -26,8 +26,9 @@ public class ZigzagLevelOrder {
             //循环判断cnt自减后大于0
             while (cnt-- > 0) {
                 TreeNode node = queue.poll();
-                if (node == null)
+                if (node == null) {
                     continue;
+                }
                 list.add(node.val);
                 queue.add(node.left);
                 queue.add(node.right);
