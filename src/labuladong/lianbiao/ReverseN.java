@@ -26,6 +26,7 @@ public class ReverseN {
         head.next.next = head;
         head.next = afterNode;
         return last;
+
     }
 
 
