@@ -19,6 +19,7 @@ public class ReverseN {
             // 记录第 n + 1 个节点
             afterNode = head.next;
             return head;
+
         }
         // 以 head.next 为起点，需要反转前 n - 1 个节点
         ListNode last = reverseN(head.next, n - 1);
