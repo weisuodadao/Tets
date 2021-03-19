@@ -74,15 +74,16 @@ public class BianLi {
     }
 
     //层次遍历
-    public static void levelTravel(TreeNode root) {
+    public List<Integer> levelTravel(TreeNode root) {
+        List<Integer> res = new ArrayList<>();
         if (root == null) {
-            return;
+            return res;
         }
         Queue<TreeNode> q = new LinkedList<>();
         q.add(root);
         while (!q.isEmpty()) {
             TreeNode temp = q.poll();
-            System.out.println(temp.val);
+            res.add(temp.val);
             if (temp.left != null) {
                 q.add(temp.left);
             }
@@ -90,6 +91,7 @@ public class BianLi {
                 q.add(temp.right);
             }
         }
+        return res;
     }
 
     //层次遍历
