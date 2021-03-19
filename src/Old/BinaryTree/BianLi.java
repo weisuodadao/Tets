@@ -18,12 +18,16 @@ public class BianLi {
     //前序遍历
     List<Integer> preOrderTraversal(TreeNode root) {
         List<Integer> ret = new ArrayList<>();
-        if (root == null) return ret;
+        if (root == null) {
+            return ret;
+        }
         Stack<TreeNode> s = new Stack<>();
         s.push(root);
         while (!s.isEmpty()) {
             TreeNode node = s.pop();
-            if (node == null) continue;
+            if (node == null) {
+                continue;
+            }
             ret.add(node.val);
             s.push(node.right);
             s.push(node.left);
@@ -34,7 +38,9 @@ public class BianLi {
     //中序遍历
     List<Integer> inOrderTraversal(TreeNode root) {
         List<Integer> ret = new ArrayList<>();
-        if (root == null) return ret;
+        if (root == null) {
+            return ret;
+        }
         Stack<TreeNode> s = new Stack<>();
         TreeNode cur = root;
         while (cur != null || !s.isEmpty()) {
@@ -56,7 +62,9 @@ public class BianLi {
         s.push(root);
         while (!s.isEmpty()) {
             TreeNode n = s.pop();
-            if (n == null) continue;
+            if (n == null) {
+                continue;
+            }
             ret.add(n.val);
             s.push(n.left);
             s.push(n.right);
@@ -67,14 +75,20 @@ public class BianLi {
 
     //层次遍历
     public static void levelTravel(TreeNode root) {
-        if (root == null) return;
+        if (root == null) {
+            return;
+        }
         Queue<TreeNode> q = new LinkedList<>();
         q.add(root);
         while (!q.isEmpty()) {
             TreeNode temp = q.poll();
             System.out.println(temp.val);
-            if (temp.left != null) q.add(temp.left);
-            if (temp.right != null) q.add(temp.right);
+            if (temp.left != null) {
+                q.add(temp.left);
+            }
+            if (temp.right != null) {
+                q.add(temp.right);
+            }
         }
     }
 
@@ -87,8 +101,9 @@ public class BianLi {
             int cnt = queue.size();
             while (cnt != 0) {
                 TreeNode t = queue.poll();
-                if (t == null)
+                if (t == null) {
                     continue;
+                }
                 ret.add(t.val);
                 queue.add(t.left);
                 queue.add(t.right);
