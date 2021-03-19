@@ -32,5 +32,65 @@ public class IsValidBST {
 
     }
 
+    //在 BST 中搜索一个数
+    void isInBST(TreeNode root, int target) {
+        if (root.val == target) {
+            return;
+        }
+        if (root.val < target) {
+            isInBST(root.right, target);
+        }
+        if (root.val > target) {
+            isInBST(root.left, target);
+        }
+
+    }
+
+    //在BST中插入一个数
+    TreeNode insertBST(TreeNode root, int val) {
+        if (root == null) {
+            return new TreeNode(val);
+        }
+        if (root.val < val) {
+            root.right = insertBST(root.right, val);
+
+        }
+        if (root.val > val) {
+            root.left = insertBST(root.left, val);
+        }
+        return root;
+    }
+
+    //在BST中删除一个数
+    TreeNode deleteBST(TreeNode root, int val) {
+        if (root.val == val) {
+            //删除逻辑
+            if (root.left == null) {
+                return root.right;
+            }
+            if (root.right == null) {
+                return root.left;
+            }
+            TreeNode minNode = getMin(root.right);
+            root.val = minNode.val;
+            root.right = deleteBST(root.right, minNode.val);
+
+        } else if (root.val < val) {
+            root.right = deleteBST(root.right, val);
+        } else if (root.val > val) {
+            root.left = deleteBST(root.left, val);
+        }
+        return root;
+    }
+
+
+    TreeNode getMin(TreeNode root) {
+        // BST 最左边的就是最小的
+        while (root.left != null) {
+            root = root.left;
+        }
+        return root;
+    }
+
 
 }
