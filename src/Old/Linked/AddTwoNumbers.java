@@ -21,7 +21,9 @@ public class AddTwoNumbers {
             ListNode cur = new ListNode(0);
             int sum = ((l2 == null) ? 0 : l2.val) + ((l1 == null) ? 0 : l1.val) + carry;
             //处理进位问题
+            //尾数值
             cur.val = sum % 10;
+            //进1
             carry = sum / 10;
             prev.next = cur;
             prev = cur;

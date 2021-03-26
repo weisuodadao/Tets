@@ -10,13 +10,13 @@ public class Singleton {
 
     private volatile static Singleton singleton = null;    //注意此处加上了volatile关键字
 
-    private Singleton(){//这边不能省略
+    private Singleton() {//这边不能省略
     }
 
-    public static Singleton getInstance(){
-        if(singleton == null){
-            synchronized(Singleton.class){
-                if(singleton == null){
+    public static Singleton getInstance() {
+        if (singleton == null) {
+            synchronized (Singleton.class) {
+                if (singleton == null) {
                     singleton = new Singleton();
                     //return singleton;    //有人提议在此处进行一次返回
                 }
