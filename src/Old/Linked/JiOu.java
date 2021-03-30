@@ -5,6 +5,14 @@ package src.Old.Linked;
  *
  * @author luoxianzhuo
  * @copyright Copyright 2014-2017 JD.COM All Right Reserved
+ * 示例 1:
+ *
+ * 输入: 1->2->3->4->5->NULL
+ * 输出: 1->3->5->2->4->NULL
+ * 示例 2:
+ *
+ * 输入: 2->1->3->5->6->4->7->NULL
+ * 输出: 2->3->6->7->1->5->4->NULL
  */
 public class JiOu {
 

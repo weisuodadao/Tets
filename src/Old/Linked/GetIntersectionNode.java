@@ -15,7 +15,9 @@ public class GetIntersectionNode {
      * @description 相交链表找相交节点
      */
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
-        if (headA == null || headB == null) return null;
+        if (headA == null || headB == null) {
+            return null;
+        }
         ListNode a = headA, b = headB;
         while (a != b) {
             a = a == null ? headB : a.next;
