@@ -61,16 +61,18 @@ public class LengthOfLongestSubstring {
     }
 
     public int lengthOfLongestSubstring3(String s) {
-        if (s == null || s.length() == 0)
+        if (s == null || s.length() == 0) {
             return 0;
+        }
         HashSet<Character> set = new HashSet<>();
         int maxLen = 1;
         int i = 0;
         int j = 0;
         for (i = 0; i < s.length(); i++) {
             if (set.contains(s.charAt(i))) {
-                if (maxLen < i - j)
+                if (maxLen < i - j) {
                     maxLen = i - j;
+                }
                 while (j < i) {
                     if (s.charAt(j) == s.charAt(i)) {
                         j++;

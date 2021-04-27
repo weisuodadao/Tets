@@ -12,7 +12,9 @@ import java.util.List;
 public class KMP {
 
     public static List<Integer> kmp(String s, String p) {
-        if (s == null || p == null || s.length() < p.length()) return null;
+        if (s == null || p == null || s.length() < p.length()) {
+            return null;
+        }
         List<Integer> res = new ArrayList<>();
         char[] sArr = s.toCharArray();
         char[] pArr = p.toCharArray();
@@ -21,8 +23,9 @@ public class KMP {
         while (i < sArr.length) {
             while (j < pArr.length) {
                 //加判断防止i溢出
-                if (i >= sArr.length)
+                if (i >= sArr.length) {
                     break;
+                }
                 //j为-1或匹配，则两数组往后遍历
                 if (j == -1 || sArr[i] == pArr[j]) {
                     i++;

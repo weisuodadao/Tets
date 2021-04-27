@@ -5,8 +5,10 @@ package src.Old.String;
  *
  * @author luoxianzhuo
  * @copyright Copyright 2014-2017 JD.COM All Right Reserved
+ * 回文整数判断
  */
 public class IsPalindrome {
+
     public boolean isPalindrome(String s) {
         for (int i = 0, j = s.length() - 1; i < j; ) {
             char ic = s.charAt(i);
@@ -25,7 +27,9 @@ public class IsPalindrome {
                 j--;
                 continue;
             }
-            if (jc != ic) return false;
+            if (jc != ic) {
+                return false;
+            }
             i++;
             j--;
         }

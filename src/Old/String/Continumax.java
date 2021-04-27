@@ -9,8 +9,11 @@ package src.Old.String;
  */
 public class Continumax {
 
+    //asci码
     public static String longestNumString(String str) {
-        if (str == null || str.isEmpty()) return null;
+        if (str == null || str.isEmpty()) {
+            return null;
+        }
         int max = 0, count = 0, end = 0;
         for (int i = 0; i < str.length(); i++) {
             if (str.charAt(i) >= '0' && str.charAt(i) <= '9') {

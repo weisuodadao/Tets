@@ -9,7 +9,9 @@ package src.Old.String;
 public class ATOI {
 
     public static int myAtoi(String s) {
-        if (s.isEmpty()) return 0;
+        if (s.isEmpty()) {
+            return 0;
+        }
         int sign = 1, base = 0, i = 0, n = s.length();
         //剔除空格
         while (i < n && s.charAt(i) == ' ') {
@@ -32,6 +34,7 @@ public class ATOI {
         }
         return base;
     }
+
     public static void main(String[] args) {
         String str = "-123";
         System.out.println(myAtoi(str));
