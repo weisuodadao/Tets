@@ -13,13 +13,17 @@ import java.util.Queue;
 public class TreeDepth {
 
     public int TreeDepth(TreeNode root) {
-        if (root == null) return 0;
+        if (root == null) {
+            return 0;
+        }
         return 1 + Math.max(TreeDepth(root.left), TreeDepth(root.right));
     }
 
     //非递归实现
     public int findDeep2(TreeNode root) {
-        if (root == null) return 0;
+        if (root == null) {
+            return 0;
+        }
 
         TreeNode current;
         Queue<TreeNode> queue = new LinkedList<>();
@@ -43,6 +47,16 @@ public class TreeDepth {
             level++;//每遍历完一层level+1
         }
         return level;
+    }
+
+    //递归实现
+    public int maxDepth(TreeNode root) {
+        if (root == null) {
+            return 0;
+        }
+        int left = maxDepth(root.left);
+        int right = maxDepth(root.right);
+        return Math.max(left, right) + 1;
     }
 
 }

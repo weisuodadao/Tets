@@ -8,24 +8,29 @@ import java.util.List;
  *
  * @author luoxianzhuo
  * @copyright Copyright 2014-2017 JD.COM All Right Reserved
+ * 输入：n = 3
+ * 输出：["((()))","(()())","(())()","()(())","()()()"]
  * 括号生成
  */
 public class GenerateParenthesis {
+
     public List<String> generateParenthesis(int n) {
-        List<String> ans = new ArrayList();
-        backtrack(ans, "", 0, 0, n);
-        return ans;
+        List<String> res = new ArrayList();
+        backtrack(res, "", 0, 0, n);
+        return res;
     }
 
-    public void backtrack(List<String> ans, String cur, int open, int close, int max){
+    public void backtrack(List<String> res, String cur, int open, int close, int max) {
         if (cur.length() == max * 2) {
-            ans.add(cur);
+            res.add(cur);
             return;
         }
-        if (open < max)
-            backtrack(ans, cur+"(", open+1, close, max);
-        if (close < open)
-            backtrack(ans, cur+")", open, close+1, max);
+        if (open < max) {
+            backtrack(res, cur + "(", open + 1, close, max);
+        }
+        if (close < open) {
+            backtrack(res, cur + ")", open, close + 1, max);
+        }
     }
 
 }
