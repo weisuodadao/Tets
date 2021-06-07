@@ -35,7 +35,8 @@ public class FindBottomLeftValue1 {
     }
 
     //方法2：递归
-    class Solution{
+    class Solution {
+
         int maxDepth = -1, res = -1;
 
         public int findBottomLeftValue2(TreeNode root) {
@@ -44,7 +45,9 @@ public class FindBottomLeftValue1 {
         }
 
         private void helper(TreeNode root, int depth) {
-            if (root == null) return;
+            if (root == null) {
+                return;
+            }
             helper(root.left, depth + 1);
             //判断是否是最大深度
             if (depth > maxDepth) {

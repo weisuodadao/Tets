@@ -8,9 +8,14 @@ package src.Old.BinaryTree;
  * 二叉树叶子节点数目
  */
 public class LeafCounts {
+
     public int leafCount(TreeNode root) {
-        if (root == null) return 0;
-        if (root.left == null && root.right == null) return 1;
+        if (root == null) {
+            return 0;
+        }
+        if (root.left == null && root.right == null) {
+            return 1;
+        }
         return leafCount(root.left) + leafCount(root.right);
     }
 }

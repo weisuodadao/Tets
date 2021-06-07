@@ -5,6 +5,7 @@ package src.Old.BinaryTree;
  *
  * @author luoxianzhuo
  * @copyright Copyright 2014-2017 JD.COM All Right Reserved
+ * 星标
  */
 public class LowestCommonAncestor {
 
@@ -15,7 +16,9 @@ public class LowestCommonAncestor {
      * @description 二叉树的最近公共祖先
      */
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
-        if (root == null || root == p || root == q) return root;
+        if (root == null || root == p || root == q) {
+            return root;
+        }
         TreeNode left = lowestCommonAncestor(root.left, p, q);
         TreeNode right = lowestCommonAncestor(root.right, p, q);
 

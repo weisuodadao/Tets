@@ -10,7 +10,9 @@ package src.Old.BinaryTree;
 public class Mirror {
 
     public void Mirror(TreeNode root) {
-        if (root == null) return;
+        if (root == null) {
+            return;
+        }
         swap(root);
         Mirror(root.left);
         Mirror(root.right);

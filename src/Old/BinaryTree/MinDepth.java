@@ -2,7 +2,7 @@ package src.Old.BinaryTree;
 
 /**
  * @ClassName MinDepth
- * @Description: TODO
+ * @Description:
  * @Author xianzhuo
  * @Date 2021/4/16 5:55 下午
  * @Version V1.0
@@ -21,7 +21,7 @@ public class MinDepth {
         if ((root.left == null && root.right == null)) {
             return 1;
         }
-        //如果左孩子和由孩子其中一个为空，那么需要返回比较大的那个孩子的深度
+        //如果左孩子和右孩子其中一个为空，那么需要返回比较大的那个孩子的深度
         int left = minDepth1(root.left);
         int right = minDepth1(root.right);
 
