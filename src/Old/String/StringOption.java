@@ -36,7 +36,8 @@ public class StringOption {
      * @description 字符串乘法
      */
     public String multiply(String num1, String num2) {
-        int m = num1.length() - 1, n = num2.length() - 1;
+        int m = num1.length() - 1;
+        int n = num2.length() - 1;
         int[] pos = new int[m + n];
 
         for (int i = m; i >= 0; i--) {

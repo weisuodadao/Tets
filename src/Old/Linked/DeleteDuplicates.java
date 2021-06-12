@@ -8,6 +8,7 @@ package src.Old.Linked;
  * 删除链表重复元素
  */
 public class DeleteDuplicates {
+
     public ListNode deleteDuplicates(ListNode head) {
         ListNode current = head;
         while (current != null && current.next != null) {

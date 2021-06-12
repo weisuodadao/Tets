@@ -10,7 +10,9 @@ package src.Old.String;
 public class LongestPalindrome {
 
     public String longestPalindrome(String s) {
-        if (s == null || s.length() < 1) return "";
+        if (s == null || s.length() < 1) {
+            return "";
+        }
         int start = 0, end = 0;
         for (int i = 0; i < s.length(); i++) {
             //奇数长度
@@ -23,22 +25,26 @@ public class LongestPalindrome {
                 end = i + len / 2;
             }
         }
+        //这里的end+1是因为 java自带的左闭右开的原因
         return s.substring(start, end + 1);
     }
 
     /**
-    * @author luoxianzhuo
-    * @date 2019/9/5 22:21
-    * @version V1.0.0 
-    * @description 字符串周围长度 
-    */
+     * @author luoxianzhuo
+     * @date 2019/9/5 22:21
+     * @version V1.0.0
+     * @description 字符串周围长度
+     */
     private int expandAroundCenter(String s, int left, int right) {
-        int L = left, R = right;
-        while (L >= 0 && R < s.length() && s.charAt(L) == s.charAt(R)) {
-            L--;
-            R++;
+        // left = right 的时候，此时回文中心是一个字符，回文串的长度是奇数
+        // right = left + 1 的时候，此时回文中心是一个空隙，回文串的长度是偶数
+        // 跳出循环的时候恰好满足 s.charAt(left) ！= s.charAt(right)
+        while (left >= 0 && right < s.length() && s.charAt(left) == s.charAt(right)) {
+            left--;
+            right++;
         }
-        return R - L - 1;
+        // 回文串的长度是right-left+1-2 = right - left - 1
+        return right - left - 1;
     }
 
 }

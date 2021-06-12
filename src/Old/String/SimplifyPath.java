@@ -32,7 +32,7 @@ public class SimplifyPath {
     }
 
     public static void main(String[] args) {
-        SimplifyPath s=new SimplifyPath();
+        SimplifyPath s = new SimplifyPath();
         System.out.println(s.simplifyPath("/a/./b/./../c/"));
     }
 }

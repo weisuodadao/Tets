@@ -18,7 +18,8 @@ public class GetIntersectionNode {
         if (headA == null || headB == null) {
             return null;
         }
-        ListNode a = headA, b = headB;
+        ListNode a = headA;
+        ListNode b = headB;
         while (a != b) {
             a = a == null ? headB : a.next;
             b = b == null ? headA : b.next;

@@ -13,41 +13,50 @@ import java.util.concurrent.atomic.AtomicInteger;
  */
 public class PartitionListNode {
 
-    public ListNode partition(ListNode head, int x) {
 
-        // before and after are the two pointers used to create the two list
-        // before_head and after_head are used to save the heads of the two lists.
-        // All of these are initialized with the dummy nodes created.
+        public ListNode partition(ListNode head, int x) {
+            ListNode small = new ListNode(0);
+            ListNode smallHead = small;
+            ListNode large = new ListNode(0);
+            ListNode largeHead = large;
+            while (head != null) {
+                if (head.val < x) {
+                    small.next = head;
+                    small = small.next;
+                } else {
+                    large.next = head;
+                    large = large.next;
+                }
+                head = head.next;
+            }
+            large.next = null;
+            small.next = largeHead.next;
+            return smallHead.next;
+        }
+
+
+    public ListNode partition2(ListNode head, int x) {
         ListNode beforeHead = new ListNode(0);
         ListNode before = beforeHead;
         ListNode afterHead = new ListNode(0);
         ListNode after = afterHead;
 
         while (head != null) {
-
-            // If the original list node is lesser than the given x,
-            // assign it to the before list.
             if (head.val < x) {
                 before.next = head;
                 before = before.next;
             } else {
-                // If the original list node is greater or equal to the given x,
-                // assign it to the after list.
                 after.next = head;
                 after = after.next;
             }
 
-            // move ahead in the original list
             head = head.next;
         }
 
-        // Last node of "after" list would also be ending node of the reformed list
         after.next = null;
 
-        // Once all the nodes are correctly assigned to the two lists,
-        // combine them to form a single list which would be returned.
         before.next = afterHead.next;
-        AtomicInteger atomicInteger=new AtomicInteger();
+        AtomicInteger atomicInteger = new AtomicInteger();
         atomicInteger.incrementAndGet();
 
         return beforeHead.next;
