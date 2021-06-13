@@ -1,6 +1,14 @@
 package src.Old.Array;
 
+
+
+/**两个有序数组的最后中位数
+nums1 = [1,2], nums2 = [3,4]  合并数组 = [1,2,3,4] ，中位数 (2 + 3) / 2 = 2.5
+ nums1 = [1,3], nums2 = [2] 合并数组 = [1,2,3] ，中位数 2
+ **/
+
 public class TwoArrayMedian {
+
     public double findMedianSortedArrays(int[] A, int[] B) {
         int m = A.length;
         int n = B.length;

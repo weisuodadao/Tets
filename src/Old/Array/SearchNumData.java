@@ -45,8 +45,12 @@ public class SearchNumData {
      * @description 找到第k大索引，不存在返回-1
      */
     private static int findKthLargestIndex(int[] nums, int k) {
-        if (nums.length == 0) return -1;
-        if (k < 1 || k > nums.length) return -1;
+        if (nums.length == 0) {
+            return -1;
+        }
+        if (k < 1 || k > nums.length) {
+            return -1;
+        }
         Arrays.sort(nums);
         int n = nums.length - 1;
         int i = n, count = 0;
@@ -66,19 +70,19 @@ public class SearchNumData {
     public static void main(String[] args) {
         //无序多个重复数据
         int[] array = {
-                1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10, 11, 11, 12, 12, 11, 12, 7, 8
+            1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10, 11, 11, 12, 12, 11, 12, 7, 8
         };
         //有序重复数据
         int[] array1 = {
-                1, 2, 3, 4, 5, 6, 6
+            1, 2, 3, 4, 5, 6, 6
         };
         //全是重复数据
         int[] array2 = {
-                1, 1, 1, 1, 1, 1, 1
+            1, 1, 1, 1, 1, 1, 1
         };
         //无重复数据
         int[] array3 = {
-                1, 2, 3, 4, 5, 6, 66
+            1, 2, 3, 4, 5, 6, 66
         };
         System.out.print(findKthLargest(array, 0) + "\n");
         System.out.print(findMediumOutOfKth(array1, 3) + "\n");
