@@ -12,6 +12,7 @@ import java.util.List;
 public class FindClosestElements {
 
     public class Solution {
+
         public List<Integer> findClosestElements(List<Integer> arr, int k, int x) {
             int n = arr.size();
             if (x <= arr.get(0)) {

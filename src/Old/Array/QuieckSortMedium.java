@@ -8,6 +8,7 @@ package src.Old.Array;
  * 数组中值
  */
 public class QuieckSortMedium {
+
     public static int getMedian(int[] nums) {
         return partition(nums, 0, nums.length - 1);
     }
@@ -15,18 +16,18 @@ public class QuieckSortMedium {
     private static int partition(int[] nums, int start, int end) {
         /***快排partition函数原代码——start***/
         int left = start;
-        int right = end ;
+        int right = end;
 
         int point = nums[start];
         while (true) {
-            while (left < right && nums[right] >= point){
+            while (left < right && nums[right] >= point) {
                 right--;
             }
-            nums[left]=nums[right];
-            while (left < right && nums[left] <= point){
+            nums[left] = nums[right];
+            while (left < right && nums[left] <= point) {
                 left++;
             }
-            nums[right]=nums[left];
+            nums[right] = nums[left];
             if (left == right) {
                 break;
             }
@@ -45,7 +46,7 @@ public class QuieckSortMedium {
     }
 
     public static void main(String[] args) {
-        int[] arr={1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10, 11, 11, 12, 12, 11, 12, 7, 8};
+        int[] arr = {1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10, 11, 11, 12, 12, 11, 12, 7, 8};
         System.out.println(QuieckSortMedium.getMedian(arr));
     }
 }

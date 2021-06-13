@@ -1,6 +1,6 @@
 package src.Old.Linked;
 
-public class ReserseLinked {
+public class  ReserseLinked {
 
     public ListNode ReverseList1(ListNode head) {
         if (head == null) {

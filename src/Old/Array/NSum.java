@@ -16,7 +16,7 @@ public class NSum {
      * @author luoxianzhuo
      * @date 2019/3/27 16:09
      * @version V1.0.0
-     * @description 三数之合
+     * @description 三数之和
      */
     public List<List<Integer>> threeSum(int[] num) {
         Arrays.sort(num);

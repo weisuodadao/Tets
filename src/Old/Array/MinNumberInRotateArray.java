@@ -5,11 +5,14 @@ package src.Old.Array;
  *
  * @author luoxianzhuo
  * @copyright Copyright 2014-2017 JD.COM All Right Reserved
+ * 旋转数组最小值
  */
 public class MinNumberInRotateArray {
 
     public static int minNumberInRotateArray(int[] nums) {
-        if (nums.length == 0) return 0;
+        if (nums.length == 0) {
+            return 0;
+        }
         int low = 0, high = nums.length - 1;
         while (low < high) {
 
@@ -37,7 +40,7 @@ public class MinNumberInRotateArray {
     }
 
     public static void main(String[] args) {
-        int[] a= {3, 4, 5, 1, 2};
+        int[] a = {3, 4, 5, 1, 2};
         System.out.println(MinNumberInRotateArray.minNumberInRotateArray(a));
     }
 
