@@ -12,6 +12,7 @@ public class LRUCache {
 
 
     class Node {
+
         int key;
         int value;
         Node prev;

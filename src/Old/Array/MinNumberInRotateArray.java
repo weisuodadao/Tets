@@ -36,7 +36,7 @@ public class MinNumberInRotateArray {
                 return nums[i + 1];
             }
         }
-        return nums[low];
+            return nums[low];
     }
 
     public static void main(String[] args) {

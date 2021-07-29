@@ -8,9 +8,11 @@ package src.Old;
  */
 public class Singleton {
 
-    private volatile static Singleton singleton = null;    //注意此处加上了volatile关键字
+    //注意此处加上了volatile关键字
+    private volatile static Singleton singleton = null;
 
-    private Singleton() {//这边不能省略
+    //这边不能省略
+    private Singleton() {
     }
 
     public static Singleton getInstance() {
