@@ -7,13 +7,15 @@ import java.util.Stack;
  *
  * @author luoxianzhuo
  * @copyright Copyright 2014-2017 JD.COM All Right Reserved
+ * 回文链表
  */
 public class PailLinked {
 
     //利用栈的思想
     public boolean checkPalindrom(ListNode node) {
-        if (node == null)
+        if (node == null) {
             return false;
+        }
         Stack<ListNode> stack = new Stack<>();
         ListNode fast = node;
         ListNode slow = node;
@@ -23,11 +25,13 @@ public class PailLinked {
             fast = fast.next.next;
         }
         //如果为奇数个
-        if (fast != null)
+        if (fast != null) {
             slow = slow.next;
+        }
         while (!stack.isEmpty()) {
-            if (stack.pop().val != slow.val)
+            if (stack.pop().val != slow.val) {
                 return false;
+            }
             slow = slow.next;
         }
 
@@ -71,7 +75,9 @@ public class PailLinked {
     }
 
     private ListNode reverse2(ListNode head) {
-        if (head == null || head.next == null) return head;
+        if (head == null || head.next == null) {
+            return head;
+        }
         ListNode pre = null;
         ListNode next = null;
         while (head.next != null) {

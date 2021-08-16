@@ -1,4 +1,6 @@
-package src.Old.BinaryTree;
+package src.Old.BinaryTree.DiGui;
+
+import src.Old.BinaryTree.TreeNode;
 
 /**
  * Created by luoxianzhuo on 2019/3/28 17:27

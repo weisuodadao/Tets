@@ -8,6 +8,8 @@ import java.util.List;
  *
  * @author luoxianzhuo
  * @copyright Copyright 2014-2017 JD.COM All Right Reserved
+ *
+ * 给你一个排序的数组，返回k个离目标x最近的数字。
  */
 public class FindClosestElements {
 

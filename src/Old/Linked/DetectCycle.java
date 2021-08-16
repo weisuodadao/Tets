@@ -4,7 +4,6 @@ package src.Old.Linked;
  * Created by luoxianzhuo on 2019/3/28 21:43
  *
  * @author luoxianzhuo
- * @copyright Copyright 2014-2017 JD.COM All Right Reserved
  */
 public class DetectCycle {
 

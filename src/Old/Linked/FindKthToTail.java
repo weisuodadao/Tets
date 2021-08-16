@@ -6,6 +6,7 @@ package src.Old.Linked;
  * @author luoxianzhuo
  * @copyright Copyright 2014-2017 JD.COM All Right Reserved
  * 输入一个链表，输出该链表中倒数第k个结点
+ * 快慢指针
  */
 public class FindKthToTail {
 

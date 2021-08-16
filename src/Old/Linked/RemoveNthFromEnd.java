@@ -2,7 +2,7 @@ package src.Old.Linked;
 
 /**
  * @ClassName RemoveNthFromEnd
- * @Description: TODO
+ * @Description:
  * @Author xianzhuo
  * @Date 2021/6/21 5:39 下午
  * @Version V1.0

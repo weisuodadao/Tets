@@ -27,7 +27,7 @@ public class ReverseListNode {
         cur = head;
         while (cur != null) {
             next = cur.next;
-            // 逐个结点反转
+            // 逐个结点grid
             cur.next = pre;
             // 更新指针位置
             pre = cur;
@@ -37,7 +37,7 @@ public class ReverseListNode {
 
     }
 
-    ///** 反转区间 [a, b) 的元素，注意是左闭右开 */
+    ///** grid区间 [a, b) 的元素，注意是左闭右开 */
     public ListNode reverse3(ListNode a, ListNode b) {
         ListNode pre, cur, next;
         pre = null;
@@ -52,7 +52,7 @@ public class ReverseListNode {
     }
 
 
-    //K 个一组反转链表
+    //K 个一组grid链表
     public ListNode reverseKGroup(ListNode head, int k) {
         if (head == null) {
             return head;

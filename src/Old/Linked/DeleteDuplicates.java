@@ -5,7 +5,7 @@ package src.Old.Linked;
  *
  * @author luoxianzhuo
  * @copyright Copyright 2014-2017 JD.COM All Right Reserved
- * 删除链表重复元素
+ * 删除链表重复元素，保证链表升序排列
  */
 public class DeleteDuplicates {
 

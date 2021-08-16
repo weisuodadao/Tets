@@ -5,6 +5,8 @@ package src.Old.Array;
  *
  * @author luoxianzhuo
  * @copyright Copyright 2014-2017 JD.COM All Right Reserved
+ *
+ * 获取最小
  */
 public class GetLocalMin {
 

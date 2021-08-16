@@ -5,7 +5,7 @@ package src.Old.Array;
  *
  * @author luoxianzhuo
  * @copyright Copyright 2014-2017 JD.COM All Right Reserved
- * 数组中重复的数字 无序
+ * 无序数组中重复的数字
  */
 public class Duplicate {
     public int duplicate(int[] nums) {

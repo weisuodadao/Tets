@@ -40,7 +40,6 @@ public class LinkedQueue {
         if (isEmpty()) {
             throw new Exception("stack is empty");
         }
-        ListNode listNode = first;
         first = first.next;
         N--;
         if (isEmpty()) {
