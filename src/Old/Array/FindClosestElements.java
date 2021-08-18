@@ -27,7 +27,8 @@ public class FindClosestElements {
                     index = -index - 1;
                 }
 
-                int low = Math.max(0, index - k - 1), high = Math.min(arr.size() - 1, index + k - 1);
+                int low = Math.max(0, index - k - 1);
+                int high = Math.min(arr.size() - 1, index + k - 1);
 
                 while (high - low > k - 1) {
                     if (low < 0 || (x - arr.get(low)) <= (arr.get(high) - x)) {

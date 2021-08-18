@@ -12,23 +12,21 @@ import src.Old.BinaryTree.TreeNode;
 public class IsBalanceTree {
 
 
-    public boolean isBalanceTree(TreeNode root) {
+    public boolean isBalanced(TreeNode root) {
         if (root == null) {
-            return true;
-        }
-        if (Math.abs(getMaxTreeDepth(root.left) - getMaxTreeDepth(root.right)) <= 1) {
             return true;
         } else {
-            return false;
+            return Math.abs(height(root.left) - height(root.right)) <= 1 && isBalanced(root.left) && isBalanced(root.right);
         }
-
     }
 
-    private int getMaxTreeDepth(TreeNode root) {
+    public int height(TreeNode root) {
         if (root == null) {
             return 0;
+        } else {
+            return Math.max(height(root.left), height(root.right)) + 1;
         }
-        return 1 + getMaxTreeDepth(root.left) + getMaxTreeDepth(root.right);
     }
+
 
 }

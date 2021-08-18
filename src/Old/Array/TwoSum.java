@@ -13,7 +13,9 @@ import java.util.List;
 public class TwoSum {
 
     public static List<List<Integer>> twoSum(int[] a, int target) {
-        if (a.length == 0) return null;
+        if (a.length == 0) {
+            return null;
+        }
         int i = 0;
         int j = a.length - 1;
         Arrays.sort(a);
@@ -34,7 +36,7 @@ public class TwoSum {
     }
 
     public static void main(String[] args) {
-        int[] a = {0, 1, 1, 2, 3, 6, 7, 8,8, 9, 11, 15,};
+        int[] a = {0, 1, 1, 2, 3, 6, 7, 8, 8, 9, 11, 15,};
         System.out.println(TwoSum.twoSum(a, 9));
     }
 }

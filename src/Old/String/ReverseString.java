@@ -16,11 +16,11 @@ public class ReverseString {
         char[] a = s.toCharArray();
         int n = a.length;
 
-        // step 1. reverse the whole string
+        // step 1. 翻转整个字符串
         reverse(a, 0, n - 1);
-        // step 2. reverse each word
+        // step 2. 翻转每一个字母
         reverseWords(a, n);
-        // step 3. clean up spaces
+        // step 3.去除空格
         return cleanSpaces(a, n);
     }
 
@@ -36,7 +36,7 @@ public class ReverseString {
     private void reverseWords(char[] a, int n) {
         int i = 0, j = 0;
         while (i < n) {
-            // skip spaces
+            // 跳空格
             while (i < j || i < n && a[i] == ' ') {
                 i++;
             }
