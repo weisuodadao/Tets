@@ -16,7 +16,8 @@ public class IsBalanceTree {
         if (root == null) {
             return true;
         } else {
-            return Math.abs(height(root.left) - height(root.right)) <= 1 && isBalanced(root.left) && isBalanced(root.right);
+            return Math.abs(height(root.left) - height(root.right)) <= 1 && isBalanced(root.left) && isBalanced(
+                root.right);
         }
     }
 

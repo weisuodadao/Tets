@@ -1,4 +1,4 @@
-package src.Old.BinaryTree;
+package src.Old.BinaryTree.BianLi;
 
 /**
  * @ClassName NumTrees

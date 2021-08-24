@@ -18,7 +18,7 @@ public class ReverseString {
 
         // step 1. 翻转整个字符串
         reverse(a, 0, n - 1);
-        // step 2. 翻转每一个字母
+        // step 2. 翻转每一个字母回来
         reverseWords(a, n);
         // step 3.去除空格
         return cleanSpaces(a, n);

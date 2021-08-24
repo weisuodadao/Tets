@@ -9,30 +9,6 @@ package src.Old.Array;
 public class ArrayKthLargest {
 
 
-
-    /**
-     * @author luoxianzhuo
-     * @date 2019/9/16 22:02
-     * @version V1.0.0
-     * @description 快速排序解法
-     */
-    private static int partitionLoc(int[] arr, int low, int high) {
-        int pivotKey = arr[low];
-        while (low < high) {
-            while (low < high && arr[high] > pivotKey) {
-                high--;
-            }
-            arr[low] = arr[high];
-            while (low < high && arr[low] < pivotKey) {
-                low++;
-            }
-            arr[high] = arr[low];
-        }
-        arr[low] = pivotKey;
-        return low;
-    }
-
-
     public int quickSelect(int[] nums, int left, int right, int k_smallest) {
     /*
     Returns the k-th smallest element of list within left..right.
@@ -60,6 +36,33 @@ public class ArrayKthLargest {
     public int findKthLargestByQsort(int[] nums, int k) {
         return quickSelect(nums, 0, nums.length - 1, nums.length - k);
     }
+
+
+
+    /**
+     * @author luoxianzhuo
+     * @date 2019/9/16 22:02
+     * @version V1.0.0
+     * @description 快速排序解法
+     */
+    private static int partitionLoc(int[] arr, int low, int high) {
+        int pivotKey = arr[low];
+        while (low < high) {
+            while (low < high && arr[high] > pivotKey) {
+                high--;
+            }
+            arr[low] = arr[high];
+            while (low < high && arr[low] < pivotKey) {
+                low++;
+            }
+            arr[high] = arr[low];
+        }
+        arr[low] = pivotKey;
+        return low;
+    }
+
+
+
 
 
     //小顶堆做排序

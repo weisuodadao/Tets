@@ -1,7 +1,8 @@
-package src.Old.BinaryTree;
+package src.Old.BinaryTree.BianLi;
 
 import java.util.LinkedList;
 import java.util.Queue;
+import src.Old.BinaryTree.TreeNode;
 
 /**
  * Created by luoxianzhuo on 2019/9/17 21:23

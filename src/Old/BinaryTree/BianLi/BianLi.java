@@ -1,4 +1,4 @@
-package src.Old.BinaryTree;
+package src.Old.BinaryTree.BianLi;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -6,6 +6,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 import java.util.Stack;
+import src.Old.BinaryTree.TreeNode;
 
 /**
  * Created by luoxianzhuo on 2019/8/26 14:52

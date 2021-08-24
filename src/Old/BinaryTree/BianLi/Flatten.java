@@ -1,4 +1,6 @@
-package src.Old.BinaryTree;
+package src.Old.BinaryTree.BianLi;
+
+import src.Old.BinaryTree.TreeNode;
 
 /**
  * @ClassName Flatten

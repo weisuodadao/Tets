@@ -1,4 +1,6 @@
-package src.Old.BinaryTree;
+package src.Old.BinaryTree.BianLi;
+
+import src.Old.BinaryTree.TreeNode;
 
 /**
  * Created by luoxianzhuo on 2019/8/21 16:13

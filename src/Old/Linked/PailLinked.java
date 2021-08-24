@@ -34,7 +34,6 @@ public class PailLinked {
             }
             slow = slow.next;
         }
-
         return true;
     }
 
