@@ -1,5 +1,9 @@
 package src.Old.Stack;
 
+import java.util.Deque;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.Map;
 import java.util.Stack;
 
 /**
@@ -7,33 +11,39 @@ import java.util.Stack;
  *
  * @author luoxianzhuo
  * @copyright Copyright 2014-2017 JD.COM All Right Reserved
+ *
+ * 有效括号
  */
 public class StackPiPei {
-    public static boolean isvalid(String s) {
-        Stack<Character> stack = new Stack<>();
-        for (char c : s.toCharArray()) {
-            if (c == '(' || c == '{' || c == '[') {
-                stack.push(c);
-            } else {
-                if (stack.isEmpty()) {
-                    return false;
-                }
-                char cStack = stack.pop();
-                boolean b1 = c == ')' && cStack != '(';
-                boolean b2 = c == ']' && cStack != '[';
-                boolean b3 = c == '}' && cStack != '{';
-                if (b1 || b2 || b3) {
-                    return false;
-                }
-            }
+
+
+    public boolean isValid(String s) {
+        int n = s.length();
+        if (n % 2 == 1) {
+            return false;
         }
 
+        Map<Character, Character> pairs = new HashMap<Character, Character>() {{
+            put(')', '(');
+            put(']', '[');
+            put('}', '{');
+        }};
+        Deque<Character> stack = new LinkedList<>();
+        for (int i = 0; i < n; i++) {
+            char ch = s.charAt(i);
+            if (pairs.containsKey(ch)) {
+                if (stack.isEmpty() || stack.peek() != pairs.get(ch)) {
+                    return false;
+                }
+                stack.pop();
+            } else {
+                stack.push(ch);
+            }
+        }
+        //在遍历结束后，如果栈中没有左括号，说明我们将字符串 ss 中的所有左括号闭合
         return stack.isEmpty();
-
     }
 
-    public static void main(String[] args) {
-        System.out.println(StackPiPei.isvalid("(){}[]"));
-    }
+
 
 }
