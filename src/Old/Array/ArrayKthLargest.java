@@ -9,34 +9,32 @@ package src.Old.Array;
 public class ArrayKthLargest {
 
 
-    public int quickSelect(int[] nums, int left, int right, int k_smallest) {
+    public int quickSelect(int[] nums, int left, int right, int kSmallest) {
     /*
     Returns the k-th smallest element of list within left..right.
     */
-
-        if (left == right) // If the list contains only one element,
-        {
-            return nums[left];  // return that element
+        // If the list contains only one element,
+        if (left == right) {
+            return nums[left];
         }
 
         int pivot_index = partitionLoc(nums, left, right);
 
         // the pivot is on (N - k)th smallest position
-        if (k_smallest == pivot_index) {
-            return nums[k_smallest];
+        if (kSmallest == pivot_index) {
+            return nums[kSmallest];
         }
         // go left side
-        else if (k_smallest < pivot_index) {
-            return quickSelect(nums, left, pivot_index - 1, k_smallest);
+        else if (kSmallest < pivot_index) {
+            return quickSelect(nums, left, pivot_index - 1, kSmallest);
         }
         // go right side
-        return quickSelect(nums, pivot_index + 1, right, k_smallest);
+        return quickSelect(nums, pivot_index + 1, right, kSmallest);
     }
 
     public int findKthLargestByQsort(int[] nums, int k) {
         return quickSelect(nums, 0, nums.length - 1, nums.length - k);
     }
-
 
 
     /**
@@ -60,9 +58,6 @@ public class ArrayKthLargest {
         arr[low] = pivotKey;
         return low;
     }
-
-
-
 
 
     //小顶堆做排序
@@ -155,8 +150,6 @@ public class ArrayKthLargest {
         ArrayKthLargest arrayKthLargest = new ArrayKthLargest();
         System.out.println(arrayKthLargest.findKthLargestByQsort(arr, 3));
     }
-
-
 
 
 }

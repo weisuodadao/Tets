@@ -11,7 +11,7 @@ import java.util.Set;
  */
 public class TestAnt {
 
-    public int findKthLargest(int[] a, int k) {
+    public int findOKthLargest(int[] a, int k) {
 
         return findK(a, 0, a.length - 1, a.length - k);
     }

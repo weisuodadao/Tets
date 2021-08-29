@@ -5,11 +5,13 @@ package src.Old.Array;
  *
  * @author luoxianzhuo
  * @copyright Copyright 2014-2017 JD.COM All Right Reserved
+ * 搜索旋转排序数组
  */
 public class ReverseArraysearch {
 
     public int search(int[] nums, int target) {
-        int start = 0, end = nums.length - 1;
+        int start = 0;
+        int end = nums.length - 1;
         while (start <= end) {
             if (target == nums[start]) {
                 return start;

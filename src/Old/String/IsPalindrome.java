@@ -6,6 +6,10 @@ package src.Old.String;
  * @author luoxianzhuo
  * @copyright Copyright 2014-2017 JD.COM All Right Reserved
  * 回文整数判断
+ *
+ * 双指针
+ * 栈
+ * reverse
  */
 public class IsPalindrome {
 
