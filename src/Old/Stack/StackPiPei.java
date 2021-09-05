@@ -12,7 +12,7 @@ import java.util.Stack;
  * @author luoxianzhuo
  * @copyright Copyright 2014-2017 JD.COM All Right Reserved
  *
- * 有效括号
+ * 有效的括号
  */
 public class StackPiPei {
 
