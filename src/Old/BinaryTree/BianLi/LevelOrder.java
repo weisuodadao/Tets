@@ -25,8 +25,8 @@ public class LevelOrder {
         queue.offer(root);
         while (!queue.isEmpty()) {
             List<Integer> level = new ArrayList<>();
-            int currentSize = queue.size();
-            for (int i = 1; i <= currentSize; i++) {
+            int size = queue.size();
+            for (int i = 1; i <= size; i++) {
                 TreeNode node = queue.poll();
                 level.add(node.val);
                 if (node.left != null) {
