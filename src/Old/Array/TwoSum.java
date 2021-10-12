@@ -35,6 +35,27 @@ public class TwoSum {
         return list;
     }
 
+    public  List<List<Integer>> sum(int[]a,int x){
+        if (a.length==0)return null;
+        int i=0;
+        int j=a.length-1;
+        Arrays.sort(a);
+        List<List<Integer>> list= new ArrayList<>();
+        while (i<j){
+            int sum=a[i]+a[j];
+            if (x==sum){
+                list.add(Arrays.asList(a[i],a[j]));
+                i++;
+                j--;
+            }else if(x>sum){
+                j--;
+            }else {
+                i++;
+            }
+        }
+        return list;
+    }
+
     public static void main(String[] args) {
         int[] a = {0, 1, 1, 2, 3, 6, 7, 8, 8, 9, 11, 15,};
         System.out.println(TwoSum.twoSum(a, 9));

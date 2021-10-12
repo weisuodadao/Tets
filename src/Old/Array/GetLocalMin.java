@@ -6,7 +6,7 @@ package src.Old.Array;
  * @author luoxianzhuo
  * @copyright Copyright 2014-2017 JD.COM All Right Reserved
  *
- * 获取最小
+ * 获取有序有重复值数组最小值
  */
 public class GetLocalMin {
 

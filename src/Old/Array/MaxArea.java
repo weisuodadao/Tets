@@ -37,7 +37,25 @@ public class MaxArea {
             }
         }
         return ans;
+    }
 
+    public int max(int[] a) {
+        if (a.length < 2) {
+            return 0;
+        }
+        int l = 0;
+        int r = a.length - 1;
+        int ans = 0;
+        while (l < r) {
+            int area = Math.max(a[l], a[r] * (r - l));
+            ans = Math.max(area, ans);
+            if (a[l] <= a[r]) {
+                l++;
+            } else {
+                r--;
+            }
+        }
+        return ans;
     }
 
 }

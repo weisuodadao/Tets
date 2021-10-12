@@ -20,7 +20,6 @@ public class MajorityElement {
 
 
     //如果将数组 nums 中的所有元素按照单调递增或单调递减的顺序排序，那么下标为n/2的元素（下标从 0 开始）一定是众数
-    //著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
     public int majorityElement(int[] nums) {
         Arrays.sort(nums);
         return nums[nums.length / 2];

@@ -8,6 +8,10 @@ package src.Old.Array;
  */
 public class ArrayKthLargest {
 
+    public int findKthLargestByQsort(int[] nums, int k) {
+        return quickSelect(nums, 0, nums.length - 1, nums.length - k);
+    }
+
 
     public int quickSelect(int[] nums, int left, int right, int kSmallest) {
     /*
@@ -32,9 +36,7 @@ public class ArrayKthLargest {
         return quickSelect(nums, pivot_index + 1, right, kSmallest);
     }
 
-    public int findKthLargestByQsort(int[] nums, int k) {
-        return quickSelect(nums, 0, nums.length - 1, nums.length - k);
-    }
+
 
 
     /**

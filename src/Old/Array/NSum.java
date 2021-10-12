@@ -21,7 +21,7 @@ public class NSum {
     public List<List<Integer>> threeSum(int[] num) {
         Arrays.sort(num);
         List<List<Integer>> res = new LinkedList<>();
-
+        //注意减2
         for (int i = 0; i < num.length - 2; i++) {
             if (i == 0 || (i > 0 && num[i] != num[i - 1])) {
                 int lo = i + 1;
@@ -47,6 +47,36 @@ public class NSum {
             }
         }
         return res;
+    }
+
+    public List<List<Integer>> sum3(int[] a) {
+        Arrays.sort(a);
+        List<List<Integer>> list = new LinkedList<>();
+        for (int i = 0; i < a.length - 2; i++) {
+            int l = i + 1;
+            int h = a.length - 1;
+            int sum = 0 - a[i];
+            while (l < h) {
+                if (sum == a[l] + a[h]) {
+                    list.add(Arrays.asList(a[l], a[h]));
+                    while (l < h && a[l] == a[l + 1]) {
+                        l++;
+                    }
+                    while ((l < h) && a[h] == a[h - 1]) {
+                        h--;
+                    }
+                    l++;
+                    h--;
+                } else if (a[l] + a[h] < sum) {
+                    l++;
+                } else {
+                    h--;
+                }
+            }
+
+
+        }
+        return list;
     }
 
 }

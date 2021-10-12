@@ -21,7 +21,7 @@ public class MissingNumber {
 
     //hashset
     public int missingNumberHash(int[] nums) {
-        Set<Integer> numSet = new HashSet<Integer>();
+        Set<Integer> numSet = new HashSet<>();
         for (int num : nums) {
             numSet.add(num);
         }
