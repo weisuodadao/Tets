@@ -20,4 +20,16 @@ public class DeleteDuplicates {
         }
         return head;
     }
+
+    ListNode del(ListNode head) {
+        ListNode c = head;
+        while (c != null && c.next != null) {
+            if (c.next.val == c.val) {
+                c.next = c.next.next;
+            } else {
+                c = c.next;
+            }
+        }
+        return head;
+    }
 }

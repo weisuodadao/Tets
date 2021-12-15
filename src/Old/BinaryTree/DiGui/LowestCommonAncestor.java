@@ -21,7 +21,6 @@ public class LowestCommonAncestor {
         if (root == null || root == p || root == q) {
             return root;
         }
-
         //递归
         TreeNode left = lowestCommonAncestor(root.left, p, q);
         TreeNode right = lowestCommonAncestor(root.right, p, q);
@@ -37,7 +36,18 @@ public class LowestCommonAncestor {
             return right;
         }
         return null;
+    }
+    TreeNode lowest(TreeNode root,TreeNode p,TreeNode q){
+        if (root==null||root==p||root==q)return root;
+        TreeNode left=lowest(root.left,p,q);
+        TreeNode right=lowest(root.right,p,q);
 
+        if (left != null && right != null) {
+            return root;
+        }
+        if (left!=null)return left;
+        if (right!=null)return right;
+        return null;
     }
 
 }

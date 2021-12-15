@@ -1,5 +1,6 @@
 package src.Old.Array;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
@@ -49,20 +50,23 @@ public class NSum {
         return res;
     }
 
-    public List<List<Integer>> sum3(int[] a) {
+    List<List<Integer>> tSum(int[] a) {
+        if (a.length < 1) {
+            return null;
+        }
         Arrays.sort(a);
-        List<List<Integer>> list = new LinkedList<>();
+        List<List<Integer>> lists = new ArrayList<>();
         for (int i = 0; i < a.length - 2; i++) {
             int l = i + 1;
             int h = a.length - 1;
             int sum = 0 - a[i];
             while (l < h) {
-                if (sum == a[l] + a[h]) {
-                    list.add(Arrays.asList(a[l], a[h]));
+                if (a[l] + a[h] == sum) {
+                    lists.add(Arrays.asList(a[l], a[h]));
                     while (l < h && a[l] == a[l + 1]) {
                         l++;
                     }
-                    while ((l < h) && a[h] == a[h - 1]) {
+                    while (l < h && a[h] == a[h - 1]) {
                         h--;
                     }
                     l++;
@@ -73,10 +77,8 @@ public class NSum {
                     h--;
                 }
             }
-
-
         }
-        return list;
+        return lists;
     }
 
 }

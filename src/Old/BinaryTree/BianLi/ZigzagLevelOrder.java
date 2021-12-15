@@ -44,6 +44,33 @@ public class ZigzagLevelOrder {
         return res;
     }
 
+    List<List<Integer>> z(TreeNode node){
+        Queue<TreeNode> q=new LinkedList<>();
+        List<List<Integer>> res=new ArrayList<>();
+        if (node!=null){
+            q.add(node);
+        }
+        while (!q.isEmpty()){
+            LinkedList<Integer> tmp=new LinkedList<>();
+            for (int i = q.size();i >0;i--) {
+                TreeNode t=q.poll();
+                if(res.size()%2==0){
+                    tmp.addLast(t.val);
+                }else {
+                    tmp.addFirst(t.val);
+                }
+                if (t.left!=null){
+                    q.add(t.left);
+                }
+                if (t.right!=null){
+                    q.add(t.right);
+                }
+            }
+            res.add(tmp);
+        }
+        return res;
+    }
+
 
     public ArrayList<ArrayList<Integer>> PrintZ(TreeNode pRoot) {
         ArrayList<ArrayList<Integer>> ret = new ArrayList<>();

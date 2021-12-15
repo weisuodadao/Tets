@@ -45,4 +45,13 @@ public class MaxPathSum {
         return root.val + Math.max(leftGain, rightGain);
     }
 
+    int maxNum(TreeNode root){
+        if (root==null)return 0;
+        int left=Math.max(maxNum(root.left),0);
+        int right=Math.max(maxNum(root.right),0);
+        int newPath=root.val+left+right;
+        maxSum=Math.max(newPath,maxSum);
+        return root.val+Math.max(left,right);
+    }
+
 }

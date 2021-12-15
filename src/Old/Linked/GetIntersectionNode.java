@@ -25,6 +25,18 @@ public class GetIntersectionNode {
             b = b == null ? headA : b.next;
         }
         return a;
-
     }
+
+   ListNode xiangjiao(ListNode l1,ListNode l2){
+        if (l1==null||l2==null){
+            return null;
+        }
+        ListNode a=l1;
+        ListNode b=l2;
+        while (a!=b){
+            a=a==null?l2:a.next;
+            b=b==null?l1:b.next;
+        }
+        return a;
+   }
 }

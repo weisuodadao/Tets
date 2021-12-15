@@ -20,6 +20,18 @@ public class HasPathSum {
             return true;
         }
         return hasPathSum(root.left, sum - root.val) || hasPathSum(root.right, sum - root.val);
-
     }
+
+
+    public boolean hasPathSum1(TreeNode root,int sum){
+        if (root==null){
+            return false;
+        }
+        if (root.left!=null&&root.right==null&&root.val==sum){
+            return true;
+
+        }
+        return hasPathSum1(root.left,sum- root.val)||hasPathSum1(root.right,sum- root.val);
+    }
+
 }

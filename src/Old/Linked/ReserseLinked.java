@@ -17,6 +17,18 @@ public class  ReserseLinked {
         return pre;
     }
 
+   ListNode re(ListNode l){
+        if (l==null)return null;
+        ListNode p=null;
+        while (l!=null){
+            ListNode next=l.next;
+            l.next=p;
+            p=l;
+            l=next;
+        }
+        return p;
+   }
+
     public ListNode ReverseList(ListNode head) {
         //如果链表为空或者链表中只有一个元素
         if (head == null || head.next == null)

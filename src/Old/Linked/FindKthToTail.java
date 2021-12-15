@@ -14,7 +14,6 @@ public class FindKthToTail {
         if (head == null || k <= 0) {
             return null;
         }
-
         ListNode pre = head;
         ListNode last = head;
         for (int i = 1; i < k; i++) {
@@ -24,12 +23,29 @@ public class FindKthToTail {
                 return null;
             }
         }
-
         while (pre.next != null) {
             pre = pre.next;
             last = last.next;
         }
         return last;
     }
+
+   ListNode findK(ListNode head,int k){
+        if (head==null&&k<=0)return null;
+        ListNode p=head;
+        ListNode l=head;
+       for (int i = 0; i < k; i++) {
+           if (p.next!=null){
+               p=p.next;
+           }else {
+               return null;
+           }
+       }
+       while (p.next!=null){
+           p=p.next;
+           l=l.next;
+       }
+       return l;
+   }
 
 }

@@ -41,34 +41,31 @@ public class ReverseArraysearch {
         return -1;
     }
 
-    public int find(int[] a, int x) {
-        int start = 0, end = a.length - 1;
-        while (start < end) {
-            if (x == a[start]) {
-                return start;
-            }
-            if (x == a[end]) {
-                return end;
-            }
-            int mid = (start + end) >> 1;
-            if (x == a[mid]) {
-                return mid;
-            }
-            if (a[start] > a[mid]) {
-                if (x > a[mid] && a[start] > x) {
-                    start = mid + 1;
-                } else {
-                    end = mid - 1;
+    int search1(int[] nums,int target){
+        int start=0, end=nums.length-1;
+        while (start<end){
+            if (target==nums[start])return start;
+            if (target==nums[end])return end;
+            int mid=(start+end)/2;
+            if (target==nums[mid]) return mid;
+            if (nums[start]>nums[mid]){
+                if (target>nums[mid]&&nums[start]>target){
+                    start=mid+1;
+                }else {
+                    end=mid-1;
                 }
-            } else {
-                if (x < a[mid] && a[start] < x) {
-                    end = mid - 1;
-                } else {
-                    start = mid + 1;
+            }else {
+                if (target<nums[mid]&&target>nums[start]){
+                    end=mid-1;
+                }else {
+                    start=mid+1;
                 }
+            }
 
-            }
         }
+        return -1;
     }
+
+
 
 }

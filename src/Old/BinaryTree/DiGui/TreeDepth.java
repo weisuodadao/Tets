@@ -1,4 +1,4 @@
-package src.Old.BinaryTree.BianLi;
+package src.Old.BinaryTree.DiGui;
 
 import java.util.LinkedList;
 import java.util.Queue;
@@ -18,6 +18,12 @@ public class TreeDepth {
             return 0;
         }
         return 1 + Math.max(TreeDepth(root.left), TreeDepth(root.right));
+    }
+    int dep(TreeNode root){
+        if (root==null){
+            return 0;
+        }
+        return Math.max(dep(root.left),dep(root.right))+1;
     }
 
     //非递归实现
@@ -59,5 +65,16 @@ public class TreeDepth {
         int right = maxDepth(root.right);
         return Math.max(left, right) + 1;
     }
+
+    int maxDepth1(TreeNode root) {
+        if (root == null) {
+            return 0;
+        }
+        int left = maxDepth1((root.left));
+        int right = maxDepth1(root.right);
+        return Math.max(left, right) + 1;
+    }
+
+
 
 }

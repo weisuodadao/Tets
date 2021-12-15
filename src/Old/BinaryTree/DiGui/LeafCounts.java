@@ -20,4 +20,14 @@ public class LeafCounts {
         }
         return leafCount(root.left) + leafCount(root.right);
     }
+
+    int countLeaf(TreeNode root) {
+        if (null == root) {
+            return 0;
+        }
+        if (root.left == null && root.right == null) {
+            return 1;
+        }
+        return countLeaf(root.left) + countLeaf(root.right);
+    }
 }

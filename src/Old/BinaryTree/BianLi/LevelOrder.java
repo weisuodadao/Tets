@@ -35,13 +35,36 @@ public class LevelOrder {
                 if (node.right != null) {
                     queue.offer(node.right);
                 }
-
             }
             ret.add(level);
         }
-
         return ret;
-
     }
+
+    public List<List<Integer>> level(TreeNode root){
+        List<List<Integer>> res=new ArrayList<>();
+        if (root==null){
+            return res;
+        }
+        Queue<TreeNode> q=new LinkedList<>();
+        q.offer(root);
+        while (!q.isEmpty()){
+            List<Integer> level=new ArrayList<>();
+            int size=q.size();
+            for (int i = 0; i < size; i++) {
+                TreeNode curNode=q.poll();
+                level.add(curNode.val);
+                if (curNode.left!=null){
+                    q.offer(root.left);
+                }
+                if (curNode.right!=null){
+                    q.offer(root.right);
+                }
+            }
+        }
+        return res;
+    }
+
+
 
 }

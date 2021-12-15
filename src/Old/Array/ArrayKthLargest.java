@@ -12,18 +12,16 @@ public class ArrayKthLargest {
         return quickSelect(nums, 0, nums.length - 1, nums.length - k);
     }
 
+    public int findKth(int[]a,int k){
+        return quick(a,0,a.length-1,a.length-k);
+    }
+
 
     public int quickSelect(int[] nums, int left, int right, int kSmallest) {
-    /*
-    Returns the k-th smallest element of list within left..right.
-    */
-        // If the list contains only one element,
         if (left == right) {
             return nums[left];
         }
-
         int pivot_index = partitionLoc(nums, left, right);
-
         // the pivot is on (N - k)th smallest position
         if (kSmallest == pivot_index) {
             return nums[kSmallest];
@@ -34,6 +32,16 @@ public class ArrayKthLargest {
         }
         // go right side
         return quickSelect(nums, pivot_index + 1, right, kSmallest);
+    }
+
+    int quick(int[]a,int left,int right,int kSmall){
+        if (left==right)return a[left];
+        int pk=partitionLoc(a,left,right);
+        if (kSmall==pk)return a[kSmall];
+        else if (kSmall<pk){
+            return quick(a,left,pk-1,kSmall);
+        }
+        return quick(a,pk+1,right,kSmall);
     }
 
 

@@ -35,6 +35,8 @@ public class SumNumbers {
         return sum(root, 0);
     }
 
+
+
     private int sum(TreeNode root, int num) {
         if (root==null){
             return 0;
@@ -44,6 +46,17 @@ public class SumNumbers {
             return num;
         }
         return sum(root.left, num) + sum(root.right, num);
+    }
+
+    int sum1(TreeNode root, int num) {
+        if (root == null) {
+            return 0;
+        }
+        num = num * 10 + root.val;
+        if (root.left == null && root.right == null) {
+            return num;
+        }
+        return sum1(root.left, num) + sum(root.right, num);
     }
 
 }

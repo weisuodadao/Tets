@@ -45,7 +45,31 @@ public class FindBottomLeftValue {
             }
         }
         return res;
+    }
 
+    int findLeft(TreeNode root){
+        if (root==null) return 0;
+
+        int res=0;
+        Queue<TreeNode> q=new LinkedList<>();
+        q.offer(root);
+        while (!q.isEmpty()){
+            int size=q.size();
+            for (int i = 0; i < size; i++) {
+                TreeNode curNode=q.poll();
+                if (i==0){
+                    res=curNode.val;
+                }
+                if (curNode.left!=null){
+                    q.offer(curNode.left);
+                }
+                if (curNode.right!=null){
+                    q.offer(curNode.right);
+                }
+            }
+
+        }
+        return res;
     }
 
 }

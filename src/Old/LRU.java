@@ -3,22 +3,24 @@ package src.Old;
 import java.util.HashMap;
 
 /**
- * Created by luoxianzhuo on 2019/3/28 21:55
- *
- * @author luoxianzhuo
- * @copyright Copyright 2014-2017 JD.COM All Right Reserved
- */
-public class LRUCache {
-
+ * @ClassName LRU
+ * @Description:
+ * @Author xianzhuo
+ * @Date 2021/11/21 5:27 下午
+ * @Version V1.0
+ **/
+public class LRU {
 
     class Node {
+
         int key;
-        int value;
-        Node prev;
+        int val;
+        Node pre;
         Node next;
+
         public Node(int key, int value) {
             this.key = key;
-            this.value = value;
+            this.val = val;
         }
     }
 
@@ -27,7 +29,7 @@ public class LRUCache {
     Node head = null;
     Node tail = null;
 
-    public LRUCache(int capacity) {
+    public LRU(int capacity) {
         this.map = new HashMap<>();
         this.cap = capacity;
     }
@@ -36,20 +38,16 @@ public class LRUCache {
         if (!map.containsKey(key)) {
             return -1;
         }
-
         Node t = map.get(key);
-
         remove(t);
         setHead(t);
-
-        return t.value;
+        return t.val;
     }
 
-    public void put(int key, int value) {
-        if (map.containsKey(key)) {
-            Node t = map.get(key);
-            t.value = value;
-
+    public void put(int k, int v) {
+        if (map.containsKey(k)) {
+            Node t = map.get(k);
+            t.val = v;
             remove(t);
             setHead(t);
         } else {
@@ -57,42 +55,36 @@ public class LRUCache {
                 map.remove(tail.key);
                 remove(tail);
             }
-
-            Node t = new Node(key, value);
+            Node t = new Node(k, v);
             setHead(t);
-            map.put(key, t);
+            map.put(k, t);
         }
     }
 
-    //remove a node
     private void remove(Node t) {
-        if (t.prev != null) {
-            t.prev.next = t.next;
+        if (t.pre != null) {
+            t.pre.next = t.next;
         } else {
             head = t.next;
         }
 
         if (t.next != null) {
-            t.next.prev = t.prev;
+            t.next.pre = t.pre;
         } else {
-            tail = t.prev;
+            tail = t.pre;
         }
     }
 
-    //set a node to be head
     private void setHead(Node t) {
         if (head != null) {
-            head.prev = t;
+            head.pre = t;
         }
-
         t.next = head;
-        t.prev = null;
+        t.pre = null;
         head = t;
-
         if (tail == null) {
             tail = head;
         }
     }
-
 
 }

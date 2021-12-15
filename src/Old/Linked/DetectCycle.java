@@ -37,4 +37,23 @@ public class DetectCycle {
         }
         return null;
     }
+
+    ListNode huan(ListNode head){
+        if (head==null||head.next==null)return null;
+        ListNode fast=head;
+        ListNode slow=head;
+        while (fast!=null&&fast.next!=null){
+            fast=fast.next.next;
+            slow=slow.next;
+            if (slow== fast){
+                break;
+            }
+        }
+        while (head!=null&&slow!=null){
+            if (slow==head)return slow;
+            head=head.next;
+            slow=slow.next;
+        }
+        return null;
+    }
 }

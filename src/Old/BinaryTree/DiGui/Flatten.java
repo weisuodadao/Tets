@@ -1,4 +1,4 @@
-package src.Old.BinaryTree.BianLi;
+package src.Old.BinaryTree.DiGui;
 
 import src.Old.BinaryTree.TreeNode;
 

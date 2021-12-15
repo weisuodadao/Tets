@@ -19,8 +19,27 @@ import java.util.Arrays;
 public class MajorityElement {
 
 
-    //如果将数组 nums 中的所有元素按照单调递增或单调递减的顺序排序，那么下标为n/2的元素（下标从 0 开始）一定是众数
     public int majorityElement(int[] nums) {
+        int n = nums.length;
+        int count = 1;
+        int duoshu = nums[0];
+        for (int i = 0; i < n; i++) {
+            if (nums[i] == duoshu) {
+                count++;
+            } else {
+                count--;
+                if (count == 0) {
+                    nums[i] = duoshu;
+                    count++;
+                }
+            }
+        }
+        return count;
+    }
+
+
+    //如果将数组 nums 中的所有元素按照单调递增或单调递减的顺序排序，那么下标为n/2的元素（下标从 0 开始）一定是众数
+    public int majority1(int[] nums) {
         Arrays.sort(nums);
         return nums[nums.length / 2];
     }

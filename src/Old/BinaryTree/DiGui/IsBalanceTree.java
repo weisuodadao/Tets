@@ -21,6 +21,14 @@ public class IsBalanceTree {
         }
     }
 
+    boolean isB(TreeNode root){
+        if (root==null)return true;
+        else {
+            return Math.abs(h(root.left)-h(root.right))<=1&&isB(root.left)&&isB(root.right);
+        }
+    }
+
+
     public int height(TreeNode root) {
         if (root == null) {
             return 0;
@@ -28,6 +36,15 @@ public class IsBalanceTree {
             return Math.max(height(root.left), height(root.right)) + 1;
         }
     }
+
+    int h(TreeNode root){
+        if (root==null)return 0;
+        else {
+            return Math.max(h(root.left),h(root.right))+1;
+        }
+    }
+
+
 
 
 }

@@ -50,8 +50,34 @@ public class LargestValues {
             }
         }
         return ans;
+    }
 
-
+    List<Integer> large(TreeNode root) {
+        if (root == null) {
+            return new ArrayList<>();
+        }
+        List<Integer> res = new ArrayList<>();
+        Queue<TreeNode> q = new LinkedList<>();
+        q.offer(root);
+        while (!q.isEmpty()) {
+            int size = q.size();
+            int max = Integer.MIN_VALUE;
+            int cnt = 0;
+            for (int i = 0; i < size; i++) {
+                TreeNode node = q.poll();
+                if (node == null) {
+                    continue;
+                }
+                cnt++;
+                max = Math.max(node.val, max);
+                q.offer(node.left);
+                q.offer(node.right);
+            }
+            if (cnt > 0) {
+                res.add(max);
+            }
+        }
+        return res;
     }
 
 }

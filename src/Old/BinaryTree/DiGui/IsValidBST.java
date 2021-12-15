@@ -23,6 +23,10 @@ public class IsValidBST {
         return isValidBst(root, Long.MIN_VALUE, Long.MAX_VALUE);
     }
 
+    public boolean isBst(TreeNode root){
+        return  isBst(root,Long.MIN_VALUE,Long.MAX_VALUE);
+    }
+
     private boolean isValidBst(TreeNode root, long lower, long upper) {
         if (root == null) {
             return true;
@@ -32,5 +36,13 @@ public class IsValidBST {
         }
         return isValidBst(root.left, lower, root.val) && isValidBst(root.right, root.val, upper);
     }
+
+    boolean isBst(TreeNode root,long lower,long upper){
+        if (root==null)return true;
+        if (root.val<=lower||root.val>=upper)return false;
+        return isBst(root.left,lower,root.val)&&isBst(root.right,root.val,upper);
+    }
+
+
 
 }

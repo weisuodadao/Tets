@@ -27,4 +27,23 @@ public class BinarySearch {
         }
         return -1;
     }
+
+    public int binarySearch(int[] a, int target) {
+        if (a.length < 0) {
+            return -1;
+        }
+        int min = 0;
+        int max = a.length - 1;
+        while (min <= max) {
+            int mid = min + (max - min) / 2;
+            if (target == a[mid]) {
+                return mid;
+            } else if (a[mid] > target) {
+                max = mid - 1;
+            } else {
+                min = mid + 1;
+            }
+        }
+        return -1;
+    }
 }
